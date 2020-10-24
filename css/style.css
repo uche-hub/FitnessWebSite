@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body{
     margin: 0;
@@ -42,6 +43,15 @@ header .nav{
     height: 100%;
     z-index: 99;
     padding: 100px 0px 15px;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: transform .5s ease;
+    transition: transform .5s ease;;
+}
+
+header .nav.open{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
 }
 
 header .nav ul{
@@ -73,6 +83,7 @@ header .nav ul li a::before{
     width: 0px;
     background-color: #000;
     opacity: .2;
+    -webkit-transition: width .5s ease;
     transition: width .5s ease;
     z-index: -1;
 }
@@ -94,6 +105,24 @@ header .ham-burger span{
     display: block;
     background-color: #ffffff;
     width: 30px;
+    -webkit-transition: transform .5s ease;
+    transition: transform .5s ease;
+}
+
+header .ham-burger span:nth-child(1){
+    transform-origin: left top;
+}
+
+header .ham-burger span:nth-child(2){
+    transform-origin: left bottom;
+}
+
+header .ham-burger.active span:nth-child(1){
+    transform: rotate(45deg) translateY(-6px);
+}
+
+header .ham-burger.active span:nth-child(2){
+    transform: rotate(-45deg) translateY(6px);
 }
 
 .container{
@@ -106,10 +135,36 @@ header .ham-burger span{
     height: 100vh;
     background-image: url('../images/fitness4.jpg');
     background-size: cover;
+    padding: 15px;
+    -webkit-display: flex;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+}
+
+.home .go-down{
+    position: absolute;
+    bottom: 50px;
+    width: 26px;
+    height: 40px;
+    border: 1px solid #fff;
+    display: block;
+    border-radius: 4px;
+    text-align: center;
+    left: 50%;
+    margin-left: -13px;
+}
+
+.home .go-down .fa{
+    color: #fff;
+    -webkit-animation: goDown 1s ease infinite;
+    animation: goDown 1s ease infinite;
+}
+
+@keyframes goDown{
+    0%{transform: translateY(0); opacity: .5;}
+    100%{transform: translateY(10px);}
 }
 
 .home::after{
@@ -122,4 +177,23 @@ header .ham-burger span{
     background-color: black;
     opacity: .7;
     z-index: -1;
+}
+
+.home .container{
+    -webkit-display: flex;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.home h1{
+    color: #fff;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.home h1 span{
+    color: chartreuse;
 }
