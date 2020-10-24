@@ -23,6 +23,7 @@ header{
 }
 
 header .container{
+    -webkit-display: flex;
     display: flex;
     justify-content: space-between;
 }
@@ -118,10 +119,12 @@ header .ham-burger span:nth-child(2){
 }
 
 header .ham-burger.active span:nth-child(1){
+    -webkit-transform: rotate(45deg) translateY(-6px);
     transform: rotate(45deg) translateY(-6px);
 }
 
 header .ham-burger.active span:nth-child(2){
+    -webkit-transform: rotate(-45deg) translateY(6px);
     transform: rotate(-45deg) translateY(6px);
 }
 
@@ -162,6 +165,11 @@ header .ham-burger.active span:nth-child(2){
     animation: goDown 1s ease infinite;
 }
 
+@-webkit-keyframes goDown{
+    0%{transform: translateY(0); opacity: .5;}
+    100%{transform: translateY(10px);}
+}
+
 @keyframes goDown{
     0%{transform: translateY(0); opacity: .5;}
     100%{transform: translateY(10px);}
@@ -197,3 +205,5 @@ header .ham-burger.active span:nth-child(2){
 .home h1 span{
     color: chartreuse;
 }
+
+/* About section */
