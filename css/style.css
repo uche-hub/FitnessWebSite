@@ -504,3 +504,57 @@ header .ham-burger.active span:nth-child(2){
 }
 
 /* Start Today Section */
+.start-today{
+    background-color: crimson;
+}
+
+.start-today .content{
+    -webkit-display: flex;
+    display: flex;
+    align-items: center;
+}
+
+.start-today .content .box{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0px 15px;
+}
+
+.start-today .content .img img{
+    width: 100%;
+    display: block;
+}
+
+.start-today .content .text h2{
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    padding: 0px 0px 20px;
+}
+
+.start-today .content .text p{
+    font-size: 15px;
+    line-height: 20px;
+    color: #fff;
+    margin: 0;
+    padding: 0 0 20px;
+    font-weight: 300;
+}
+
+.start-today .content .text .btn{
+    padding: 8px 30px;
+    background-color: chartreuse;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid transparent;
+    cursor: pointer;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.start-today .content .text .btn:hover{
+    color: #fff;
+    border-color: #fff;
+    background-color: transparent;
+}
